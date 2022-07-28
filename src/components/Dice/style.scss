@@ -1,0 +1,92 @@
+:root {
+  --size: 80px;
+  --color: #000000;
+}
+
+$dicePadding: calc(var(--size) * 0.1); // 10%
+$diceBorder: calc(var(--size) * 0.05); // 5%
+$dicePointMargin: calc(var(--size) * 0.03); // 3%
+$dicePointSize: calc(
+  (var(--size) - 2 * $dicePadding - 2 * $diceBorder) / 3 - 2 * $dicePointMargin
+);
+
+.dice {
+  box-sizing: border-box;
+  list-style: none;
+  width: var(--size);
+  height: var(--size);
+  padding: $dicePadding;
+  margin: 0;
+  border: solid $diceBorder var(--color);
+  border-radius: 10%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.dice__first {
+  grid-template-areas:
+    ". . ."
+    ". a ."
+    ". . .";
+}
+.dice__second {
+  grid-template-areas:
+    "a . ."
+    ". . ."
+    ". . b";
+}
+.dice__third {
+  grid-template-areas:
+    "a . ."
+    ". c ."
+    ". . b";
+}
+.dice__fourth {
+  grid-template-areas:
+    "a . d"
+    ". . ."
+    "c . b";
+}
+.dice__fifth {
+  grid-template-areas:
+    "a . d"
+    ". e ."
+    "c . b";
+}
+.dice__sixth {
+  grid-template-areas:
+    "a . d"
+    "e . f"
+    "c . b";
+}
+
+.dice__point {
+  display: block;
+  width: $dicePointSize;
+  height: $dicePointSize;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+
+.point__first {
+  grid-area: a;
+}
+.point__second {
+  grid-area: b;
+}
+.point__third {
+  grid-area: c;
+}
+.point__fourth {
+  grid-area: d;
+}
+.point__fifth {
+  grid-area: e;
+}
+.point__sixth {
+  grid-area: f;
+}
