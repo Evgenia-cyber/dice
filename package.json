@@ -1,6 +1,6 @@
 {
-  "name": "@evgenia-cyber/dice",
-  "version": "1.0.0",
+  "name": "evgenia-cyber-dice",
+  "version": "0.0.0-development",
   "description": "Dice animation library",
   "scripts": {
     "rollup": "rollup -c",
@@ -49,5 +49,9 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Evgenia-cyber/dice.git"
+  }
 }
