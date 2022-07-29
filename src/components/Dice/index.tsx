@@ -39,7 +39,19 @@ const Dice: FC<Props> = ({ number, size }) => {
     }
   };
 
-  return <>{getDiceSide()}</>;
+  return (
+    <div className="container">
+      <div className="dice dice__color">
+        <DiceFirstFace />
+        <DiceSecondFace />
+        <DiceThirdFace />
+        <DiceFourthFace />
+        <DiceFifthFace />
+        <DiceSixthFace />
+      </div>
+    </div>
+  );
+  // return <>{getDiceSide()}</>;
 };
 
 export default Dice;

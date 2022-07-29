@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
 const FirstSideOfDice: FC = () => (
-  <ul className="dice dice__first">
-    <li className="dice__point point__first"></li>
+  <ul className="face face__first face__front dice__color">
+    <li className="face__point point__first"></li>
   </ul>
 );
 

@@ -1,7 +1,8 @@
 {
-  "name": "evgenia-cyber-dice",
-  "version": "0.0.0-development",
+  "name": "@evgenia-cyber/dice",
+  "version": "1.0.0",
   "description": "Dice animation library",
+  "keywords": ["dice", "animation"],
   "scripts": {
     "rollup": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",

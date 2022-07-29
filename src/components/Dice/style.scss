@@ -1,24 +1,74 @@
+/* ***** variables ***** */
 :root {
   --size: 80px;
-  --color: #000000;
+  --color: rgba(0, 0, 0, 0.6);
+  --shadow: rgba(143, 143, 143, 0.15);
 }
 
-$dicePadding: calc(var(--size) * 0.1); // 10%
-$diceBorder: calc(var(--size) * 0.05); // 5%
-$dicePointMargin: calc(var(--size) * 0.03); // 3%
-$dicePointSize: calc(
-  (var(--size) - 2 * $dicePadding - 2 * $diceBorder) / 3 - 2 * $dicePointMargin
+$bgColor: #ffffff;
+
+$containerSize: calc(var(--size) * 2);
+
+$faceTranslate: calc(var(--size) / 2);
+$facePadding: calc(var(--size) * 0.1); // 10%
+$faceBorder: calc(var(--size) * 0.05); // 5%
+$faceBorderRadius: calc(var(--size) * 0.06); // 6%
+$facePointMargin: calc(var(--size) * 0.03); // 3%
+$facePointSize: calc(
+  (var(--size) - 2 * $facePadding - 2 * $faceBorder) / 3 - 2 * $facePointMargin
 );
 
-.dice {
-  box-sizing: border-box;
-  list-style: none;
+$planeTranslate: $faceTranslate;
+
+/* ***** functions ***** */
+
+@function neg($val) {
+  @return calc(#{$val} * -1);
+}
+
+/* ***** styles ***** */
+
+.container {
+  width: $containerSize;
+  height: $containerSize;
+  perspective: 700px;
+  perspective-origin: center center;
+  background: transparent;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice,
+.face {
   width: var(--size);
   height: var(--size);
-  padding: $dicePadding;
+  border-radius: $faceBorderRadius;
+}
+
+.dice {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 2s;
+}
+
+.dice__color {
+  background-color: $bgColor;
+}
+
+/* ***** dice face ***** */
+.face {
+  position: absolute;
+  box-sizing: border-box;
+  list-style: none;
+  padding: $facePadding;
   margin: 0;
-  border: solid $diceBorder var(--color);
-  border-radius: 10%;
+  box-shadow: inset 0 $faceBorder $faceBorderRadius var(--shadow),
+    inset 0 neg($faceBorder) $faceBorderRadius var(--shadow),
+    inset $faceBorder 0 $faceBorderRadius var(--shadow),
+    inset neg($faceBorder) 0 $faceBorderRadius var(--shadow);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -27,47 +77,79 @@ $dicePointSize: calc(
   align-items: center;
 }
 
-.dice__first {
+.face__first {
   grid-template-areas:
     ". . ."
     ". a ."
     ". . .";
 }
-.dice__second {
+
+.face__second {
   grid-template-areas:
     "a . ."
     ". . ."
     ". . b";
 }
-.dice__third {
+
+.face__third {
   grid-template-areas:
     "a . ."
     ". c ."
     ". . b";
 }
-.dice__fourth {
+
+.face__fourth {
   grid-template-areas:
     "a . d"
     ". . ."
     "c . b";
 }
-.dice__fifth {
+
+.face__fifth {
   grid-template-areas:
     "a . d"
     ". e ."
     "c . b";
 }
-.dice__sixth {
+
+.face__sixth {
   grid-template-areas:
     "a . d"
     "e . f"
     "c . b";
 }
 
-.dice__point {
-  display: block;
-  width: $dicePointSize;
-  height: $dicePointSize;
+/* ***** dice face position ***** */
+
+.face__front {
+  transform: translateZ($faceTranslate) rotateY(-180deg);
+}
+
+.face__back {
+  transform: translateZ(neg($faceTranslate)) rotateY(180deg);
+}
+
+.face__left {
+  transform: translateX(neg($faceTranslate)) rotateY(-90deg);
+}
+
+.face__right {
+  transform: translateX($faceTranslate) rotateY(90deg);
+}
+
+.face__top {
+  transform: translateY(neg($faceTranslate)) rotateX(90deg);
+}
+
+.face__bottom {
+  transform: translateY($faceTranslate) rotateX(-90deg);
+}
+
+/* ***** point ***** */
+
+.face__point {
+  width: $facePointSize;
+  height: $facePointSize;
   border-radius: 50%;
   background-color: var(--color);
 }
@@ -75,18 +157,31 @@ $dicePointSize: calc(
 .point__first {
   grid-area: a;
 }
+
 .point__second {
   grid-area: b;
 }
+
 .point__third {
   grid-area: c;
 }
+
 .point__fourth {
   grid-area: d;
 }
+
 .point__fifth {
   grid-area: e;
 }
+
 .point__sixth {
   grid-area: f;
+}
+
+/* ***** animation ***** */
+
+@keyframes rotate {
+  100% {
+    transform: rotateX(360deg) rotateY(-360deg) rotateZ(720deg);
+  }
 }

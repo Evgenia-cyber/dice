@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
 const DiceThirdFace: FC = () => (
-  <ul className="dice dice__third">
-    <li className="dice__point point__first"></li>
-    <li className="dice__point point__second"></li>
-    <li className="dice__point point__third"></li>
+  <ul className="face face__third face__left dice__color">
+    <li className="face__point point__first"></li>
+    <li className="face__point point__second"></li>
+    <li className="face__point point__third"></li>
   </ul>
 );
 
