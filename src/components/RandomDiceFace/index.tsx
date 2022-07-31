@@ -8,8 +8,6 @@ import DiceSecondFace from "../DiceSecondFace";
 import DiceSixthFace from "../DiceSixthFace";
 import DiceThirdFace from "../DiceThirdFace";
 
-import "./style.scss";
-
 export interface Props {
   randomNumber: number;
   size?: number;
@@ -22,18 +20,24 @@ const Dice: FC<Props> = ({ randomNumber, size }) => {
     }
   }, []);
 
-  return (
-    <div className="container">
-      <div className="dice dice__color">
-        <DiceFirstFace />
-        <DiceSecondFace />
-        <DiceThirdFace />
-        <DiceFourthFace />
-        <DiceFifthFace />
-        <DiceSixthFace />
-      </div>
-    </div>
-  );
+  const getDiceSide = () => {
+    switch (randomNumber) {
+      case 1:
+        return <DiceFirstFace />;
+      case 2:
+        return <DiceSecondFace />;
+      case 3:
+        return <DiceThirdFace />;
+      case 4:
+        return <DiceFourthFace />;
+      case 5:
+        return <DiceFifthFace />;
+      default:
+        return <DiceSixthFace />;
+    }
+  };
+
+  return <>{getDiceSide()}</>;
 };
 
 export default Dice;

@@ -10,7 +10,7 @@
     "build-storybook": "build-storybook"
   },
   "author": "Evgenia Kurineva",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@rollup/plugin-commonjs": "^22.0.1",
