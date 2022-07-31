@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 
 // local imports
+import Container from "../Container";
 import DiceFifthFace from "../DiceFifthFace";
 import DiceFirstFace from "../DiceFirstFace";
 import DiceFourthFace from "../DiceFourthFace";
@@ -16,23 +17,15 @@ export interface Props {
 }
 
 const Dice: FC<Props> = ({ randomNumber, size }) => {
-  React.useEffect(() => {
-    if (size) {
-      document.documentElement.style.setProperty("--size", `${size}px`);
-    }
-  }, []);
-
   return (
-    <div className="container">
-      <div className="dice dice__color">
-        <DiceFirstFace />
-        <DiceSecondFace />
-        <DiceThirdFace />
-        <DiceFourthFace />
-        <DiceFifthFace />
-        <DiceSixthFace />
-      </div>
-    </div>
+    <Container size={size} isAnimation={true}>
+      <DiceFirstFace />
+      <DiceSecondFace />
+      <DiceThirdFace />
+      <DiceFourthFace />
+      <DiceFifthFace />
+      <DiceSixthFace />
+    </Container>
   );
 };
 

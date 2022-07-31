@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 
 // local imports
+import Container from "../Container";
 import DiceFifthFace from "../DiceFifthFace";
 import DiceFirstFace from "../DiceFirstFace";
 import DiceFourthFace from "../DiceFourthFace";
@@ -13,12 +14,7 @@ export interface Props {
   size?: number;
 }
 
-const Dice: FC<Props> = ({ randomNumber, size }) => {
-  React.useEffect(() => {
-    if (size) {
-      document.documentElement.style.setProperty("--size", `${size}px`);
-    }
-  }, []);
+const RandomDiceFace: FC<Props> = ({ randomNumber, size }) => {
 
   const getDiceSide = () => {
     switch (randomNumber) {
@@ -37,7 +33,7 @@ const Dice: FC<Props> = ({ randomNumber, size }) => {
     }
   };
 
-  return <>{getDiceSide()}</>;
+  return <Container size={size}>{getDiceSide()}</Container>;
 };
 
-export default Dice;
+export default RandomDiceFace;

@@ -51,6 +51,10 @@ $planeTranslate: $faceTranslate;
 .dice {
   position: relative;
   transform-style: preserve-3d;
+  animation: none;
+}
+
+.dice__anim {
   animation: rotate 2s;
 }
 
