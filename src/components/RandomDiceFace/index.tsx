@@ -2,12 +2,12 @@ import React, { FC } from "react";
 
 // local imports
 import Container from "../Container";
-import DiceFifthFace from "../DiceFifthFace";
-import DiceFirstFace from "../DiceFirstFace";
-import DiceFourthFace from "../DiceFourthFace";
-import DiceSecondFace from "../DiceSecondFace";
-import DiceSixthFace from "../DiceSixthFace";
-import DiceThirdFace from "../DiceThirdFace";
+import DiceFace from "../DiceFace";
+
+import { validateRandomNumber } from "../../utils";
+import { ALL_FACES } from "../../constants";
+
+import "../Dice/style.scss";
 
 export interface Props {
   randomNumber: number;
@@ -15,25 +15,14 @@ export interface Props {
 }
 
 const RandomDiceFace: FC<Props> = ({ randomNumber, size }) => {
+  const pointsCount = validateRandomNumber(randomNumber);
+  const index = pointsCount - 1;
 
-  const getDiceSide = () => {
-    switch (randomNumber) {
-      case 1:
-        return <DiceFirstFace />;
-      case 2:
-        return <DiceSecondFace />;
-      case 3:
-        return <DiceThirdFace />;
-      case 4:
-        return <DiceFourthFace />;
-      case 5:
-        return <DiceFifthFace />;
-      default:
-        return <DiceSixthFace />;
-    }
-  };
-
-  return <Container size={size}>{getDiceSide()}</Container>;
+  return (
+    <Container size={size}>
+      <DiceFace pointsCount={pointsCount} face={ALL_FACES[index]} />
+    </Container>
+  );
 };
 
 export default RandomDiceFace;

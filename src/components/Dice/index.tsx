@@ -2,12 +2,12 @@ import React, { FC } from "react";
 
 // local imports
 import Container from "../Container";
-import DiceFifthFace from "../DiceFifthFace";
-import DiceFirstFace from "../DiceFirstFace";
-import DiceFourthFace from "../DiceFourthFace";
-import DiceSecondFace from "../DiceSecondFace";
-import DiceSixthFace from "../DiceSixthFace";
-import DiceThirdFace from "../DiceThirdFace";
+import DiceFace from "../DiceFace";
+
+import { validateRandomNumber } from "../../utils";
+import { ALL_DICE_POSITIONS, ALL_FACES } from "../../constants";
+
+import { POSITIONS } from "../../types";
 
 import "./style.scss";
 
@@ -17,14 +17,20 @@ export interface Props {
 }
 
 const Dice: FC<Props> = ({ randomNumber, size }) => {
+  const pointsCount = validateRandomNumber(randomNumber);
+  const index = pointsCount - 1;
+  const positions: POSITIONS[] = ALL_DICE_POSITIONS[index];
+
   return (
     <Container size={size} isAnimation={true}>
-      <DiceFirstFace />
-      <DiceSecondFace />
-      <DiceThirdFace />
-      <DiceFourthFace />
-      <DiceFifthFace />
-      <DiceSixthFace />
+      {ALL_FACES.map((face, ind) => (
+        <DiceFace
+          key={face}
+          pointsCount={pointsCount}
+          face={face}
+          position={positions[ind]}
+        />
+      ))}
     </Container>
   );
 };
