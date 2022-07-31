@@ -26,7 +26,7 @@ const Dice: FC<Props> = ({ randomNumber, size }) => {
       {ALL_FACES.map((face, ind) => (
         <DiceFace
           key={face}
-          pointsCount={pointsCount}
+          pointsCount={ind + 1}
           face={face}
           position={positions[ind]}
         />
