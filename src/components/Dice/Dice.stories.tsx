@@ -46,6 +46,14 @@ DiceSixth.args = {
   randomNumber: 6,
 };
 
+export const DiceWithCallback = Template.bind({});
+DiceWithCallback.args = {
+  randomNumber: 5,
+  animationEndHandler: () => {
+    console.log("Animation ended");
+  },
+};
+
 export const DiceLarge = Template.bind({});
 DiceLarge.args = {
   randomNumber: 6,

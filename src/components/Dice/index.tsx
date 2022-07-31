@@ -14,15 +14,16 @@ import "./style.scss";
 export interface Props {
   randomNumber: number;
   size?: number;
+  animationEndHandler?: () => void;
 }
 
-const Dice: FC<Props> = ({ randomNumber, size }) => {
+const Dice: FC<Props> = ({ randomNumber, size, animationEndHandler }) => {
   const pointsCount = validateRandomNumber(randomNumber);
   const index = pointsCount - 1;
   const positions: POSITIONS[] = ALL_DICE_POSITIONS[index];
 
   return (
-    <Container size={size} isAnimation={true}>
+    <Container size={size} isAnimation={true} animationEndHandler={animationEndHandler}>
       {ALL_FACES.map((face, ind) => (
         <DiceFace
           key={face}
