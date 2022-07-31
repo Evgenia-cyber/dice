@@ -3,14 +3,16 @@ import React, { FC } from "react";
 export interface Props {
   size?: number;
   isAnimation?: boolean;
-  animationEndHandler?: () => void;
+  callback?: () => void;
+  setIsAnim?: (isAnim: boolean) => void;
   children: React.ReactNode;
 }
 
 const Container: FC<Props> = ({
   size,
   isAnimation = false,
-  animationEndHandler,
+  callback,
+  setIsAnim,
   children,
 }) => {
   React.useEffect(() => {
@@ -18,6 +20,13 @@ const Container: FC<Props> = ({
       document.documentElement.style.setProperty("--size", `${size}px`);
     }
   }, []);
+
+  const animationEndHandler = () => {
+    if (callback && setIsAnim) {
+      callback();
+      setIsAnim(false);
+    }
+  };
 
   return (
     <div className="container" onAnimationEnd={animationEndHandler}>

@@ -22,8 +22,19 @@ const Dice: FC<Props> = ({ randomNumber, size, animationEndHandler }) => {
   const index = pointsCount - 1;
   const positions: POSITIONS[] = ALL_DICE_POSITIONS[index];
 
+  const [isAnim, setIsAnim] = React.useState(true);
+
+  React.useEffect(() => {
+    setIsAnim(true);
+  }, [randomNumber]);
+
   return (
-    <Container size={size} isAnimation={true} animationEndHandler={animationEndHandler}>
+    <Container
+      size={size}
+      isAnimation={isAnim}
+      callback={animationEndHandler}
+      setIsAnim={setIsAnim}
+    >
       {ALL_FACES.map((face, ind) => (
         <DiceFace
           key={face}

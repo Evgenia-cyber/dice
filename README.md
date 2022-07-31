@@ -90,4 +90,4 @@ export default Component;
 
 ### Custom colors for dice and dice points
 
-Use css classes `.dice__color` and `.point__color`
+Change `background-color` in css classes `.dice__color` and `.point__color`
