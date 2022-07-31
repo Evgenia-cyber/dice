@@ -1,11 +1,11 @@
 /* ***** variables ***** */
 :root {
   --size: 80px;
-  --color: rgba(0, 0, 0, 0.6);
-  --shadow: rgba(143, 143, 143, 0.15);
 }
 
+$color: rgba(0, 0, 0, 0.6);
 $bgColor: #ffffff;
+$shadow: rgba(143, 143, 143, 0.15);
 
 $containerSize: calc(var(--size) * 2);
 
@@ -69,10 +69,10 @@ $planeTranslate: $faceTranslate;
   list-style: none;
   padding: $facePadding;
   margin: 0;
-  box-shadow: inset 0 $faceBorder $faceBorderRadius var(--shadow),
-    inset 0 neg($faceBorder) $faceBorderRadius var(--shadow),
-    inset $faceBorder 0 $faceBorderRadius var(--shadow),
-    inset neg($faceBorder) 0 $faceBorderRadius var(--shadow);
+  box-shadow: inset 0 $faceBorder $faceBorderRadius $shadow,
+    inset 0 neg($faceBorder) $faceBorderRadius $shadow,
+    inset $faceBorder 0 $faceBorderRadius $shadow,
+    inset neg($faceBorder) 0 $faceBorderRadius $shadow;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -155,7 +155,10 @@ $planeTranslate: $faceTranslate;
   width: $facePointSize;
   height: $facePointSize;
   border-radius: 50%;
-  background-color: var(--color);
+}
+
+.point__color {
+  background-color: $color;
 }
 
 .point__first {

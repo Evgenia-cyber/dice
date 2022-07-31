@@ -6,7 +6,7 @@ export interface Props {
   children: React.ReactNode;
 }
 
-const Container: FC<Props> = ({ size = 80, isAnimation = false, children }) => {
+const Container: FC<Props> = ({ size, isAnimation = false, children }) => {
   React.useEffect(() => {
     if (size) {
       document.documentElement.style.setProperty("--size", `${size}px`);
