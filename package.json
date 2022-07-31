@@ -2,7 +2,11 @@
   "name": "@evgenia-cyber/dice",
   "version": "1.0.0",
   "description": "Dice animation library",
-  "keywords": ["dice", "animation"],
+  "keywords": [
+    "dice",
+    "animation",
+    "react"
+  ],
   "scripts": {
     "rollup": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
