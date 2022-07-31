@@ -1,4 +1,4 @@
-# @evgenia-cyber/dice
+# cyber-dice
 
 React dice animation library with Typescript
 
@@ -10,13 +10,13 @@ React dice animation library with Typescript
 **npm:**
 
 ```sh
-npm install @evgenia-cyber/dice
+npm install cyber-dice
 ```
 
 **yarn:**
 
 ```sh
-yarn add @evgenia-cyber/dice
+yarn add cyber-dice
 ```
 
 ### < Dice /> props
@@ -41,7 +41,7 @@ animationEndHandler | optional | function | - | Сallback that will be executed 
 
 ```js
 import React from 'react';
-import { Dice } from '@evgenia-cyber/dice';
+import { Dice } from 'cyber-dice';
 
 const Component = () => (
       <Dice randomNumber={5} />
@@ -53,7 +53,7 @@ or
 
 ```js
 import React from 'react';
-import { DiceWithAnimation } from '@evgenia-cyber/dice';
+import { DiceWithAnimation } from 'cyber-dice';
 
 const Component = () => (
       <DiceWithAnimation randomNumber={5} />
@@ -66,7 +66,7 @@ export default Component;
 
 ```js
 import React, { FC } from 'react';
-import { Dice } from '@evgenia-cyber/dice';
+import { Dice } from 'cyber-dice';
 
 const Component: FC = () => (
       <Dice randomNumber={5} />
@@ -79,7 +79,7 @@ export default Component;
 
 ```js
 import React from 'react';
-import { DiceWithAnimation } from '@evgenia-cyber/dice';
+import { DiceWithAnimation } from 'cyber-dice';
 
 const Component = () => (
       <DiceWithAnimation randomNumber={5} size={100} animationEndHandler={() => console.log("Animation ended")}/>
