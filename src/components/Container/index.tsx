@@ -21,22 +21,25 @@ const Container: FC<Props> = ({
     }
   }, []);
 
+  console.log("isAnimation2", isAnimation);
+
   const animationEndHandler = () => {
-    if (callback && setIsAnim) {
-      callback();
+    if (setIsAnim) {
       setIsAnim(false);
+    }
+    if (callback) {
+      callback();
     }
   };
 
+  const classNames = isAnimation
+    ? "dice dice__color dice__anim"
+    : "dice dice__color";
+
+  console.log(classNames);
   return (
     <div className="container" onAnimationEnd={animationEndHandler}>
-      <div
-        className={
-          isAnimation ? "dice dice__color dice__anim" : "dice dice__color"
-        }
-      >
-        {children}
-      </div>
+      <div className={classNames}>{children}</div>
     </div>
   );
 };

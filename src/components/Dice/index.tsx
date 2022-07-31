@@ -28,6 +28,8 @@ const Dice: FC<Props> = ({ randomNumber, size, animationEndHandler }) => {
     setIsAnim(true);
   }, [randomNumber]);
 
+  console.log("isAnimation11", isAnim);
+
   return (
     <Container
       size={size}
