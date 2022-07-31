@@ -1,2 +1,2 @@
-export { default as Dice } from "./Dice";
-export { default as RandomDiceFace } from "./RandomDiceFace";
+export { default as DiceWithAnimation } from "./Dice";
+export { default as Dice } from "./RandomDiceFace";

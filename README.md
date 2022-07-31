@@ -82,7 +82,7 @@ import React from 'react';
 import { DiceWithAnimation } from '@evgenia-cyber/dice';
 
 const Component = () => (
-      <DiceWithAnimation randomNumber={5} size={100} animationEndHandler={() => {console.log("Animation ended"}/>
+      <DiceWithAnimation randomNumber={5} size={100} animationEndHandler={() => console.log("Animation ended")}/>
   );
 
 export default Component;
