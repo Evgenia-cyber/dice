@@ -56,6 +56,7 @@ $planeTranslate: $faceTranslate;
 
 .dice__anim {
   animation: rotate 2s;
+  animation-timing-function: cubic-bezier(0, 0.28, 0.5, 1.04);
 }
 
 .dice__color {
@@ -188,7 +189,10 @@ $planeTranslate: $faceTranslate;
 /* ***** animation ***** */
 
 @keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-90deg);
+  }
   100% {
-    transform: rotateX(360deg) rotateY(-360deg) rotateZ(720deg);
+    transform: rotateY(-360deg) rotateZ(720deg) rotateX(360deg);
   }
 }
