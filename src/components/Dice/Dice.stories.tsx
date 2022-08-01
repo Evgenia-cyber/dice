@@ -21,47 +21,10 @@ DiceFirst.args = {
   randomNumber: 1,
 };
 
-export const DiceSecond = Template.bind({});
-DiceSecond.args = {
-  randomNumber: 2,
-};
-
-export const DiceThird = Template.bind({});
-DiceThird.args = {
-  randomNumber: 3,
-};
-
-export const DiceFourth = Template.bind({});
-DiceFourth.args = {
-  randomNumber: 4,
-};
-
-export const DiceFifth = Template.bind({});
-DiceFifth.args = {
-  randomNumber: 5,
-};
-
-export const DiceSixth = Template.bind({});
-DiceSixth.args = {
-  randomNumber: 6,
-};
-
 export const DiceWithCallback = Template.bind({});
 DiceWithCallback.args = {
   randomNumber: 5,
   animationEndHandler: () => {
-    console.log("Animation ended");
+    alert("Animation ended");
   },
-};
-
-export const DiceLarge = Template.bind({});
-DiceLarge.args = {
-  randomNumber: 6,
-  size: 200,
-};
-
-export const DiceSmall = Template.bind({});
-DiceSmall.args = {
-  randomNumber: 6,
-  size: 20,
 };

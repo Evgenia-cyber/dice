@@ -1,6 +1,6 @@
 {
   "name": "cyber-dice",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Dice animation library",
   "keywords": [
     "dice",
@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "rollup": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Evgenia Kurineva",
   "license": "MIT",
