@@ -15,9 +15,9 @@ const Template: ComponentStory<typeof Dice> = (args) => <Dice {...args} />;
 
 // Объекты Template.bind являются экземплярами или примерами состояния компонента.
 
-export const DiceFirst = Template.bind({});
+export const DiceFirstWithAnimation = Template.bind({});
 // больше про args: https://storybook.js.org/docs/react/writing-stories/args
-DiceFirst.args = {
+DiceFirstWithAnimation.args = {
   randomNumber: 1,
 };
 

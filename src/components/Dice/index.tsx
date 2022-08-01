@@ -29,12 +29,7 @@ const Dice: FC<Props> = ({ randomNumber, size, animationEndHandler }) => {
   }, [randomNumber]);
 
   return (
-    <Container
-      size={size}
-      isAnimation={isAnim}
-      callback={animationEndHandler}
-      setIsAnim={setIsAnim}
-    >
+    <Container size={size} isAnimation={isAnim} setIsAnim={setIsAnim} callback={animationEndHandler}>
       {ALL_FACES.map((face, ind) => (
         <DiceFace
           key={face}
