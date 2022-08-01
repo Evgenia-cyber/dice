@@ -13,23 +13,27 @@ import "./style.scss";
 
 export interface Props {
   randomNumber: number;
+  isAnimation: boolean;
+  animationEndHandler: () => void;
   size?: number;
-  animationEndHandler?: () => void;
 }
 
-const Dice: FC<Props> = ({ randomNumber, size, animationEndHandler }) => {
+const Dice: FC<Props> = ({
+  randomNumber,
+  isAnimation,
+  animationEndHandler,
+  size,
+}) => {
   const pointsCount = validateRandomNumber(randomNumber);
   const index = pointsCount - 1;
   const positions: POSITIONS[] = ALL_DICE_POSITIONS[index];
 
-  const [isAnim, setIsAnim] = React.useState(true);
-
-  React.useEffect(() => {
-    setIsAnim(true);
-  }, [randomNumber]);
-
   return (
-    <Container size={size} isAnimation={isAnim} setIsAnim={setIsAnim} callback={animationEndHandler}>
+    <Container
+      size={size}
+      isAnimation={isAnimation}
+      animationEndHandler={animationEndHandler}
+    >
       {ALL_FACES.map((face, ind) => (
         <DiceFace
           key={face}

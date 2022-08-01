@@ -5,7 +5,7 @@ import RandomDiceFace from ".";
 // больше про дефолтный экспорт: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 // Определяет, где кнопка будет отображаться в Storybook
 export default {
-  title: "MyLibrary/RandomDiceFace", // MyLibrary в качестве простого названия, чтобы сгруппировать наши кастомные компоненты отдельно от примеров.
+  title: "Component", // Component в качестве простого названия, чтобы сгруппировать наши кастомные компоненты отдельно от примеров.
   component: RandomDiceFace,
 } as ComponentMeta<typeof RandomDiceFace>;
 

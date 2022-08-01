@@ -5,7 +5,7 @@ import Dice from ".";
 // больше про дефолтный экспорт: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 // Определяет, где кнопка будет отображаться в Storybook
 export default {
-  title: "MyLibrary/Dice", // MyLibrary в качестве простого названия, чтобы сгруппировать наши кастомные компоненты отдельно от примеров.
+  title: "Component", // title: "MyLibrary/Dice" // MyLibrary в качестве простого названия, чтобы сгруппировать наши кастомные компоненты отдельно от примеров.
   component: Dice,
 } as ComponentMeta<typeof Dice>;
 
@@ -19,11 +19,6 @@ export const DiceFirstWithAnimation = Template.bind({});
 // больше про args: https://storybook.js.org/docs/react/writing-stories/args
 DiceFirstWithAnimation.args = {
   randomNumber: 1,
-};
-
-export const DiceWithCallback = Template.bind({});
-DiceWithCallback.args = {
-  randomNumber: 5,
   animationEndHandler: () => {
     alert("Animation ended");
   },
