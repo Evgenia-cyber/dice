@@ -4,7 +4,6 @@ export interface Props {
   size?: number;
   isAnimation?: boolean;
   callback?: () => void;
-  setIsAnim?: (isAnim: boolean) => void;
   children: React.ReactNode;
 }
 
@@ -12,7 +11,6 @@ const Container: FC<Props> = ({
   size,
   isAnimation = false,
   callback,
-  setIsAnim,
   children,
 }) => {
   React.useEffect(() => {
@@ -21,24 +19,12 @@ const Container: FC<Props> = ({
     }
   }, []);
 
-  console.log("isAnimation2", isAnimation);
-
-  const animationEndHandler = () => {
-    if (setIsAnim) {
-      setIsAnim(false);
-    }
-    if (callback) {
-      callback();
-    }
-  };
-
   const classNames = isAnimation
     ? "dice dice__color dice__anim"
     : "dice dice__color";
 
-  console.log(classNames);
   return (
-    <div className="container" onAnimationEnd={animationEndHandler}>
+    <div className="container" onAnimationEnd={callback}>
       <div className={classNames}>{children}</div>
     </div>
   );

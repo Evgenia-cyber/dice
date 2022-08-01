@@ -15,53 +15,41 @@ const Template: ComponentStory<typeof Dice> = (args) => <Dice {...args} />;
 
 // Объекты Template.bind являются экземплярами или примерами состояния компонента.
 
-export const DiceFirst = Template.bind({});
+export const DiceFirstWithAnimation = Template.bind({});
 // больше про args: https://storybook.js.org/docs/react/writing-stories/args
-DiceFirst.args = {
+DiceFirstWithAnimation.args = {
   randomNumber: 1,
-};
-
-export const DiceSecond = Template.bind({});
-DiceSecond.args = {
-  randomNumber: 2,
-};
-
-export const DiceThird = Template.bind({});
-DiceThird.args = {
-  randomNumber: 3,
-};
-
-export const DiceFourth = Template.bind({});
-DiceFourth.args = {
-  randomNumber: 4,
-};
-
-export const DiceFifth = Template.bind({});
-DiceFifth.args = {
-  randomNumber: 5,
-};
-
-export const DiceSixth = Template.bind({});
-DiceSixth.args = {
-  randomNumber: 6,
-};
-
-export const DiceWithCallback = Template.bind({});
-DiceWithCallback.args = {
-  randomNumber: 5,
-  animationEndHandler: () => {
-    console.log("Animation ended");
+  isAnimation: true,
+  callback: () => {
+    console.log("Animation 1 ended");
   },
 };
 
-export const DiceLarge = Template.bind({});
-DiceLarge.args = {
+export const DiceSecondWithAnimation = Template.bind({});
+DiceSecondWithAnimation.args = {
   randomNumber: 6,
-  size: 200,
+  isAnimation: true,
+  callback: () => {
+    console.log("Animation 2 ended");
+  },
 };
 
-export const DiceSmall = Template.bind({});
-DiceSmall.args = {
+export const DiceLargeWithAnimation = Template.bind({});
+DiceLargeWithAnimation.args = {
+  randomNumber: 6,
+  size: 200,
+  isAnimation: true,
+  callback: () => {
+    console.log("Animation 3 ended");
+  },
+};
+
+export const DiceSmallWithAnimation = Template.bind({});
+DiceSmallWithAnimation.args = {
   randomNumber: 6,
   size: 20,
+  isAnimation: true,
+  callback: () => {
+    console.log("Animation 4 ended");
+  },
 };

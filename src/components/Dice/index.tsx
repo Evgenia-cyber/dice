@@ -13,30 +13,18 @@ import "./style.scss";
 
 export interface Props {
   randomNumber: number;
+  isAnimation: boolean;
+  callback: () => void;
   size?: number;
-  animationEndHandler?: () => void;
 }
 
-const Dice: FC<Props> = ({ randomNumber, size, animationEndHandler }) => {
+const Dice: FC<Props> = ({ randomNumber, isAnimation, callback, size }) => {
   const pointsCount = validateRandomNumber(randomNumber);
   const index = pointsCount - 1;
   const positions: POSITIONS[] = ALL_DICE_POSITIONS[index];
 
-  const [isAnim, setIsAnim] = React.useState(true);
-
-  React.useEffect(() => {
-    setIsAnim(true);
-  }, [randomNumber]);
-
-  console.log("isAnimation11", isAnim);
-
   return (
-    <Container
-      size={size}
-      isAnimation={isAnim}
-      callback={animationEndHandler}
-      setIsAnim={setIsAnim}
-    >
+    <Container size={size} isAnimation={isAnimation} callback={callback}>
       {ALL_FACES.map((face, ind) => (
         <DiceFace
           key={face}

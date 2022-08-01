@@ -21,31 +21,6 @@ DiceFaceFirst.args = {
   randomNumber: 1,
 };
 
-export const DiceFaceSecond = Template.bind({});
-DiceFaceSecond.args = {
-  randomNumber: 2,
-};
-
-export const DiceFaceThird = Template.bind({});
-DiceFaceThird.args = {
-  randomNumber: 3,
-};
-
-export const DiceFaceFourth = Template.bind({});
-DiceFaceFourth.args = {
-  randomNumber: 4,
-};
-
-export const DiceFaceFifth = Template.bind({});
-DiceFaceFifth.args = {
-  randomNumber: 5,
-};
-
-export const DiceFaceSixth = Template.bind({});
-DiceFaceSixth.args = {
-  randomNumber: 6,
-};
-
 export const DiceFaceLarge = Template.bind({});
 DiceFaceLarge.args = {
   randomNumber: 6,
