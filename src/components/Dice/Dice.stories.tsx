@@ -19,6 +19,7 @@ export const DiceFirstWithAnimation = Template.bind({});
 // больше про args: https://storybook.js.org/docs/react/writing-stories/args
 DiceFirstWithAnimation.args = {
   randomNumber: 1,
+  isAnimation: true,
   animationEndHandler: () => {
     alert("Animation ended");
   },

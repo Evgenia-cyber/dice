@@ -4,7 +4,6 @@ React dice animation library with Typescript
 
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/Evgenia-cyber/dice?filename=package.json&style=plastic)
 
-
 ## Installation
 
 **npm:**
@@ -21,69 +20,90 @@ yarn add cyber-dice
 
 ### < Dice /> props
 
-Name | Type | Prop type | Default | Description 
----  |  :-:  |  :-:  |  :-:  | ---  
-randomNumber | required | number | - | The number rolled on the diсe
-size | optional | number | 80 | Dice size in px
-
+| Name         |   Type   | Prop type | Default | Description                   |
+| ------------ | :------: | :-------: | :-----: | ----------------------------- |
+| randomNumber | required |  number   |    -    | The number rolled on the dice |
+| size         | optional |  number   |   80    | Dice size in px               |
 
 ### < DiceWithAnimation /> props
 
-Name | Type | Prop type | Default | Description 
----  |  :-:  |  :-:  |  :-:  | ---  
-randomNumber | required | number | - | The number rolled on the diсe
-size | optional | number | 80 | Dice size in px
-animationEndHandler | optional | function | - | Сallback that will be executed when the animation ends.
+| Name                |   Type   | Prop type | Default | Description                                             |
+| ------------------- | :------: | :-------: | :-----: | ------------------------------------------------------- |
+| randomNumber        | required |  number   |    -    | The number rolled on the dice                           |
+| isAnimation         | required |  boolean  |    -    | Animation control flag                                  |
+| animationEndHandler | required | function  |    -    | Callback that will be executed when the animation ends. |
+| size                | optional |  number   |   80    | Dice size in px                                         |
 
 ## Examples
 
-### Common usage
+### Dice without animation
 
 ```js
-import React from 'react';
-import { Dice } from 'cyber-dice';
+import React from "react";
+import { Dice } from "cyber-dice";
 
-const Component = () => (
-      <Dice randomNumber={5} />
-  );
-
-export default Component;
-```
-or
-
-```js
-import React from 'react';
-import { DiceWithAnimation } from 'cyber-dice';
-
-const Component = () => (
-      <DiceWithAnimation randomNumber={5} />
-  );
+const Component = () => <Dice randomNumber={5} />;
 
 export default Component;
 ```
 
-### Common usage with Typescript
+### Dice without animation with Typescript
 
 ```js
-import React, { FC } from 'react';
-import { Dice } from 'cyber-dice';
+import React, { FC } from "react";
+import { Dice } from "cyber-dice";
 
-const Component: FC = () => (
-      <Dice randomNumber={5} />
-  );
+const Component: FC = () => <Dice randomNumber={5} />;
 
 export default Component;
 ```
 
-### Custom size and callback
+### Custom size
 
 ```js
-import React from 'react';
-import { DiceWithAnimation } from 'cyber-dice';
+import React from "react";
+import { Dice } from "cyber-dice";
 
-const Component = () => (
-      <DiceWithAnimation randomNumber={5} size={100} animationEndHandler={() => console.log("Animation ended")}/>
+const Component = () => <Dice randomNumber={5} size={100} />;
+
+export default Component;
+```
+
+### Dice with animation
+
+```js
+import React from "react";
+import { DiceWithAnimation } from "cyber-dice";
+
+const Component = () => {
+  const [randomNumber, setRandomNumber] = React.useState(1);
+  const [isAnim, setIsAnim] = React.useState(true);
+
+  const clickHandler = () => {
+    setIsAnim(true);
+    const newRandomNumber = Math.floor(Math.random() * 6) + 1;
+    setRandomNumber(newRandomNumber);
+  };
+
+  const animationEndHandler = () => {
+    setIsAnim(false);
+    console.log("Animation end");
+  };
+
+  return (
+    <div>
+      {randomNumber}
+      <button type="button" onClick={clickHandler}>
+        Click
+      </button>
+      <DiceWithAnimation
+        randomNumber={randomNumber}
+        isAnimation={isAnim}
+        animationEndHandler={animationEndHandler}
+      />
+    </div>
   );
+};
 
 export default Component;
 ```
