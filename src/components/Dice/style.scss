@@ -73,10 +73,8 @@ $planeTranslate: $faceTranslate;
   list-style: none;
   padding: $facePadding;
   margin: 0;
-  box-shadow: inset 0 $shadowSize $shadow,
-    inset 0 neg($shadowSize) $shadow,
-    inset $shadowSize 0 $shadow,
-    inset neg($shadowSize) 0 $shadow;
+  box-shadow: inset 0 $shadowSize $shadow, inset 0 neg($shadowSize) $shadow,
+    inset $shadowSize 0 $shadow, inset neg($shadowSize) 0 $shadow;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);

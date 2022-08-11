@@ -34,6 +34,10 @@ yarn add cyber-dice
 | animationEndHandler | required | function  |    -    | Callback that will be executed when the animation ends. |
 | size                | optional |  number   |   80    | Dice size in px                                         |
 
+## Demo
+
+https://evgenia-cyber.github.io/dice/
+
 ## Examples
 
 ### Dice without animation
