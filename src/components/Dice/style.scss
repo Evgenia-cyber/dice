@@ -1,21 +1,24 @@
 /* ***** variables ***** */
 :root {
-  --size: 80px;
+  --dice-size: 80px;
 }
 
-$color: rgba(0, 0, 0, 0.6);
+$color: rgba(0, 0, 0, 0.8);
 $bgColor: #ffffff;
-$shadow: rgba(143, 143, 143, 0.15);
+$shadow: rgba(90, 90, 90, 0.6);
 
-$containerSize: calc(var(--size) * 2);
+$faceBorderRadius: 5px;
 
-$faceTranslate: calc(var(--size) / 2);
-$facePadding: calc(var(--size) * 0.1); // 10%
-$faceBorder: calc(var(--size) * 0.05); // 5%
-$faceBorderRadius: calc(var(--size) * 0.06); // 6%
-$facePointMargin: calc(var(--size) * 0.03); // 3%
+$containerSize: calc(var(--dice-size) * 2);
+
+$faceTranslate: calc(var(--dice-size) / 2);
+$facePadding: calc(var(--dice-size) * 0.1); // 10%
+$faceBorder: calc(var(--dice-size) * 0.05); // 5%
+$shadowSize: calc(var(--dice-size) * 0.03); // 3%
+$facePointMargin: calc(var(--dice-size) * 0.03); // 3%
 $facePointSize: calc(
-  (var(--size) - 2 * $facePadding - 2 * $faceBorder) / 3 - 2 * $facePointMargin
+  (var(--dice-size) - 2 * $facePadding - 2 * $faceBorder) / 3 - 2 *
+    $facePointMargin
 );
 
 $planeTranslate: $faceTranslate;
@@ -43,8 +46,8 @@ $planeTranslate: $faceTranslate;
 
 .dice,
 .face {
-  width: var(--size);
-  height: var(--size);
+  width: var(--dice-size);
+  height: var(--dice-size);
   border-radius: $faceBorderRadius;
 }
 
@@ -70,10 +73,10 @@ $planeTranslate: $faceTranslate;
   list-style: none;
   padding: $facePadding;
   margin: 0;
-  box-shadow: inset 0 $faceBorder $faceBorderRadius $shadow,
-    inset 0 neg($faceBorder) $faceBorderRadius $shadow,
-    inset $faceBorder 0 $faceBorderRadius $shadow,
-    inset neg($faceBorder) 0 $faceBorderRadius $shadow;
+  box-shadow: inset 0 $shadowSize $shadow,
+    inset 0 neg($shadowSize) $shadow,
+    inset $shadowSize 0 $shadow,
+    inset neg($shadowSize) 0 $shadow;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -15,7 +15,7 @@ const Container: FC<Props> = ({
 }) => {
   React.useEffect(() => {
     if (size) {
-      document.documentElement.style.setProperty("--size", `${size}px`);
+      document.documentElement.style.setProperty("--dice-size", `${size}px`);
     }
   }, []);
 
