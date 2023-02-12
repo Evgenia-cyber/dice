@@ -24,6 +24,7 @@ yarn add cyber-dice
 | ------------ | :------: | :-------: | :-----: | ----------------------------- |
 | randomNumber | required |  number   |    -    | The number rolled on the dice |
 | size         | optional |  number   |   80    | Dice size in px               |
+| faces        | optional |   array   |    -    | Faces for the dice            |
 
 ### < DiceWithAnimation /> props
 
