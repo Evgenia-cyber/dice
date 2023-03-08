@@ -18,19 +18,18 @@ const Template: ComponentStory<typeof Dice> = (args) => <Dice {...args} />;
 
 // Объекты Template.bind являются экземплярами или примерами состояния компонента.
 
-export const DiceFirstWithAnimation = Template.bind({});
-export const DiceOnlyOneOrTwoWithAnimation = Template.bind({});
+export const DiceFirstFace = Template.bind({});
+export const DiceOnlyOneOrTwoPointsFirstFace = Template.bind({});
 // больше про args: https://storybook.js.org/docs/react/writing-stories/args
-DiceFirstWithAnimation.args = {
-  faces: [ALL_FACES[0], ALL_FACES[1], ALL_FACES[2], ALL_FACES[3], ALL_FACES[4], ALL_FACES[5]],
+DiceFirstFace.args = {
   randomNumber: 1,
   isAnimation: true,
   animationEndHandler: () => {
     alert("Animation ended");
   },
 };
-DiceOnlyOneOrTwoWithAnimation.args = {
-  faces: [ALL_FACES[0], ALL_FACES[1], ALL_FACES[0], ALL_FACES[1], ALL_FACES[0], ALL_FACES[1]],
+DiceOnlyOneOrTwoPointsFirstFace.args = {
+  faces: ["first", "second", "first", "second", "first", "second"],
   randomNumber: 1,
   isAnimation: true,
   animationEndHandler: () => {

@@ -7,7 +7,7 @@ import DiceFace from "../../components/DiceFace";
 import { validateRandomNumber } from "../../utils";
 import { ALL_DICE_POSITIONS, ALL_FACES } from "../../constants";
 
-import { POSITIONS, FACES } from "../../types";
+import { POSITIONS, CustomFace } from "../../types";
 
 import "./style.scss";
 
@@ -16,7 +16,14 @@ export interface Props {
   isAnimation: boolean;
   animationEndHandler: () => void;
   size?: number;
-  faces?: [FACES, FACES, FACES, FACES, FACES, FACES];
+  faces?: [
+    CustomFace,
+    CustomFace,
+    CustomFace,
+    CustomFace,
+    CustomFace,
+    CustomFace
+  ];
 }
 
 const Dice: FC<Props> = ({
@@ -24,7 +31,7 @@ const Dice: FC<Props> = ({
   isAnimation,
   animationEndHandler,
   size,
-  faces,
+  faces = ALL_FACES,
 }) => {
   const pointsCount = validateRandomNumber(randomNumber);
   const index = pointsCount - 1;
@@ -36,7 +43,7 @@ const Dice: FC<Props> = ({
       isAnimation={isAnimation}
       animationEndHandler={animationEndHandler}
     >
-      {(faces || ALL_FACES).map((face, ind) => (
+      {faces.map((face, ind) => (
         <DiceFace
           key={ind}
           pointsCount={ALL_FACES.findIndex((f) => f === face) + 1}

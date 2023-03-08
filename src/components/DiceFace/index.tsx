@@ -2,11 +2,11 @@ import React, { FC } from "react";
 
 // local imports
 import { ALL_FACES } from "../../constants";
-import { FACES, POSITIONS } from "../../types";
+import { CustomFace, FACES, POSITIONS } from "../../types";
 
 export interface Props {
   pointsCount: number;
-  face: FACES;
+  face: FACES | CustomFace;
   position?: POSITIONS;
 }
 

@@ -15,3 +15,11 @@ export enum FACES {
   FIFTH = "fifth",
   SIXTH = "sixth",
 }
+
+export type CustomFace =
+  | "first"
+  | "second"
+  | "third"
+  | "fourth"
+  | "fifth"
+  | "sixth";

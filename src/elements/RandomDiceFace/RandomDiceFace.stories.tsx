@@ -17,28 +17,28 @@ const Template: ComponentStory<typeof RandomDiceFace> = (args) => <RandomDiceFac
 
 // Объекты Template.bind являются экземплярами или примерами состояния компонента.
 
-export const DiceFaceFirst = Template.bind({});
-export const DiceFaceSecond = Template.bind({});
-export const DiceFaceThird = Template.bind({});
-export const DiceFaceFourth = Template.bind({});
-export const DiceFaceFifth = Template.bind({});
-export const DiceFaceSixth = Template.bind({});
+export const DiceFirstFace = Template.bind({});
+export const DiceSecondFace = Template.bind({});
+export const DiceThirdFace = Template.bind({});
+export const DiceFourthFace = Template.bind({});
+export const DiceFifthFace = Template.bind({});
+export const DiceSixthFace = Template.bind({});
 // больше про args: https://storybook.js.org/docs/react/writing-stories/args
-DiceFaceFirst.args = {
+DiceFirstFace.args = {
   randomNumber: 1,
 };
-DiceFaceSecond.args = {
+DiceSecondFace.args = {
   randomNumber: 2,
 };
-DiceFaceThird.args = {
+DiceThirdFace.args = {
   randomNumber: 3,
 };
-DiceFaceFourth.args = {
+DiceFourthFace.args = {
   randomNumber: 4,
 };
-DiceFaceFifth.args = {
+DiceFifthFace.args = {
   randomNumber: 5,
 };
-DiceFaceSixth.args = {
+DiceSixthFace.args = {
   randomNumber: 6,
 };
