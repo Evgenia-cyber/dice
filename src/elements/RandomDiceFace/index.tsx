@@ -7,7 +7,7 @@ import DiceFace from "../../components/DiceFace";
 import { validateRandomNumber } from "../../utils";
 import { ALL_FACES } from "../../constants";
 
-import "../Dice/style.scss";
+import "../style.scss";
 
 export interface Props {
   randomNumber: number;

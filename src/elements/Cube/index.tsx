@@ -2,12 +2,12 @@ import React, { FC } from "react";
 
 // local imports
 import Container from "../../components/Container";
-import DiceFace from "../../components/DiceFace";
+import CubeSide from "../../components/CubeSide";
 
 import { validateRandomNumber } from "../../utils";
 import { ALL_DICE_POSITIONS, ALL_FACES } from "../../constants";
 
-import { POSITIONS, CustomFace } from "../../types";
+import { POSITIONS, CustomFace, ICubeCustomSide } from "../../types";
 
 import "../style.scss";
 
@@ -16,22 +16,15 @@ export interface Props {
   isAnimation: boolean;
   animationEndHandler: () => void;
   size?: number;
-  faces?: [
-    CustomFace,
-    CustomFace,
-    CustomFace,
-    CustomFace,
-    CustomFace,
-    CustomFace
-  ];
+  sides: Array<ICubeCustomSide>
 }
 
-const Dice: FC<Props> = ({
+const Cube: FC<Props> = ({
   randomNumber,
   isAnimation,
   animationEndHandler,
   size,
-  faces = ALL_FACES,
+  sides
 }) => {
   const pointsCount = validateRandomNumber(randomNumber);
   const index = pointsCount - 1;
@@ -43,16 +36,17 @@ const Dice: FC<Props> = ({
       isAnimation={isAnimation}
       animationEndHandler={animationEndHandler}
     >
-      {faces.map((face, ind) => (
-        <DiceFace
+      {sides.map((side, ind) => (
+        <CubeSide
           key={ind}
-          pointsCount={ALL_FACES.findIndex((f) => f === face) + 1}
-          face={face}
           position={positions[ind]}
+          text={side.text}
+          fontSize={side.fontSize}
+          textColor={side.textColor}
         />
       ))}
     </Container>
   );
 };
 
-export default Dice;
+export default Cube;

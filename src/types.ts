@@ -23,3 +23,9 @@ export type CustomFace =
   | "fourth"
   | "fifth"
   | "sixth";
+
+export interface ICubeCustomSide {
+  text: string;
+  textColor?: string;
+  fontSize?: string;
+}

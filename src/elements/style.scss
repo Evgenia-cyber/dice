@@ -38,7 +38,6 @@ $planeTranslate: $faceTranslate;
   perspective-origin: center center;
   background: transparent;
   overflow: hidden;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,11 +127,12 @@ $planeTranslate: $faceTranslate;
 /* ***** dice face position ***** */
 
 .face__front {
-  transform: translateZ($faceTranslate) rotateY(-180deg);
+  transform: translateZ($faceTranslate);
 }
 
 .face__back {
-  transform: translateZ(neg($faceTranslate)) rotateY(180deg);
+  transform: translateZ(neg($faceTranslate));
+  // transform: translateZ(neg($faceTranslate)) rotateY(180deg);
 }
 
 .face__left {
@@ -151,7 +151,7 @@ $planeTranslate: $faceTranslate;
   transform: translateY($faceTranslate) rotateX(-90deg);
 }
 
-/* ***** point ***** */
+/* ***** dice point ***** */
 
 .face__point {
   width: $facePointSize;
@@ -185,6 +185,19 @@ $planeTranslate: $faceTranslate;
 
 .point__sixth {
   grid-area: f;
+}
+
+/* ***** cube sides ***** */
+.side {
+  width: var(--dice-size);
+  height: var(--dice-size);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: #f2f3f1;
+  box-sizing: border-box;
 }
 
 /* ***** animation ***** */

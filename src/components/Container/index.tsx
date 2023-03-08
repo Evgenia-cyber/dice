@@ -20,8 +20,8 @@ const Container: FC<Props> = ({
   }, []);
 
   const classNames = isAnimation
-    ? "dice dice__color dice__anim"
-    : "dice dice__color";
+    ? "dice dice__anim"
+    : "dice";
 
   return (
     <div className="container" onAnimationEnd={animationEndHandler}>

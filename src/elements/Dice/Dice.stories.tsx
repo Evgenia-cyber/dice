@@ -3,12 +3,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // local imports
 import Dice from ".";
-import { ALL_FACES } from "../../constants";
 
 // больше про дефолтный экспорт: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 // Определяет, где кнопка будет отображаться в Storybook
 export default {
-  title: "Component/ExamplesWithAnimation", // title: "MyLibrary/Dice" // MyLibrary в качестве простого названия, чтобы сгруппировать наши кастомные компоненты отдельно от примеров.
+  title: "Component/ExamplesDiceWithAnimation", // title: "MyLibrary/Dice" // MyLibrary в качестве простого названия, чтобы сгруппировать наши кастомные компоненты отдельно от примеров.
   component: Dice,
 } as ComponentMeta<typeof Dice>;
 
