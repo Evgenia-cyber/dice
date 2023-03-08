@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
 // local imports
-import Container from "../Container";
-import DiceFace from "../DiceFace";
+import Container from "../../components/Container";
+import DiceFace from "../../components/DiceFace";
 
 import { validateRandomNumber } from "../../utils";
 import { ALL_FACES } from "../../constants";

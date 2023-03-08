@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
 // local imports
-import Container from "../Container";
-import DiceFace from "../DiceFace";
+import Container from "../../components/Container";
+import DiceFace from "../../components/DiceFace";
 
 import { validateRandomNumber } from "../../utils";
 import { ALL_DICE_POSITIONS, ALL_FACES } from "../../constants";
@@ -39,7 +39,7 @@ const Dice: FC<Props> = ({
       {(faces || ALL_FACES).map((face, ind) => (
         <DiceFace
           key={ind}
-          pointsCount={ALL_FACES.findIndex((f) => f === face ) + 1}
+          pointsCount={ALL_FACES.findIndex((f) => f === face) + 1}
           face={face}
           position={positions[ind]}
         />
