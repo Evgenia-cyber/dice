@@ -16,7 +16,7 @@ export interface Props {
   isAnimation: boolean;
   animationEndHandler: () => void;
   size?: number;
-  sides: Array<ICubeCustomSide>
+  sides: Array<ICubeCustomSide>;
 }
 
 const Cube: FC<Props> = ({
@@ -24,7 +24,7 @@ const Cube: FC<Props> = ({
   isAnimation,
   animationEndHandler,
   size,
-  sides
+  sides,
 }) => {
   const pointsCount = validateRandomNumber(randomNumber);
   const index = pointsCount - 1;
@@ -43,6 +43,7 @@ const Cube: FC<Props> = ({
           text={side.text}
           fontSize={side.fontSize}
           textColor={side.textColor}
+          bgColor={side.bgColor}
         />
       ))}
     </Container>

@@ -8,6 +8,7 @@ export interface Props {
   position?: POSITIONS;
   text?: string;
   textColor?: string;
+  bgColor?: string;
 }
 
 const CubeSide: FC<Props> = ({
@@ -15,14 +16,22 @@ const CubeSide: FC<Props> = ({
   position = POSITIONS.FRONT,
   text = "",
   textColor = "#000",
+  bgColor = "#f2f3f1",
 }) => {
   const textStyles = {
     color: textColor,
     fontSize,
   };
 
+  const bgStyles = {
+    backgroundColor: bgColor,
+  };
+
   return (
-    <div className={`side face__${position} side__${position}`}>
+    <div
+      style={bgStyles}
+      className={`side face__${position} side__${position}`}
+    >
       <span style={textStyles} className={`side__text`}>
         {text}
       </span>

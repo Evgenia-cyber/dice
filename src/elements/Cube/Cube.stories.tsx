@@ -58,11 +58,11 @@ CubeLettersAndNumbers.args = {
     alert("Animation ended");
   },
   sides: [
-    { text: "A", textColor: "red" },
-    { text: "V", textColor: "green" },
-    { text: "C", textColor: "blue" },
-    { text: "7", textColor: "#7bff00" },
-    { text: "9", textColor: "black" },
-    { text: "11", textColor: "#d607ff" },
+    { text: "A", textColor: "red", bgColor: "black" },
+    { text: "V", textColor: "green", bgColor: "red" },
+    { text: "C", textColor: "blue", bgColor: "white" },
+    { text: "7", textColor: "#7bff00", bgColor: "black" },
+    { text: "9", textColor: "black", bgColor: "#d607ff" },
+    { text: "11", textColor: "#d607ff", bgColor: "blue" },
   ],
 };

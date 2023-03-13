@@ -28,4 +28,5 @@ export interface ICubeCustomSide {
   text: string;
   textColor?: string;
   fontSize?: string;
+  bgColor?: string;
 }
